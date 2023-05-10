@@ -59,7 +59,7 @@ const lightTheme = createTheme({
         },
         background: {
             default: '#fff',
-            paper: 'rgba(242, 242, 242, 0.5)',
+            paper: 'rgba(242, 242, 242, 1)',
         },
         border: {
             default: '1px solid rgba(10, 10, 10, 0.1)',

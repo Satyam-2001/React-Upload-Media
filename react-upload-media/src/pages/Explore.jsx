@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, Grid, Link, Typography } from '@mui/material'
+import { Button, Card, CardActions, CardContent, Grid, Link, Typography, useMediaQuery, useTheme } from '@mui/material'
 import React from 'react'
 
 const data = [
@@ -29,14 +29,18 @@ const data = [
 ]
 
 export const Explore = () => {
+
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <>
       <Typography component='h1' variant='h4' className="title" fontWeight={600} letterSpacing={'2px'}>Explore</Typography>
       <Typography component='p'>In addition to our media upload React component, we offer a range of other open-source packages that may be of interest to you. Our packages are designed to provide easy-to-use solutions for a variety of common programming tasks, from data visualization to manipulation and more.</Typography>
-      <Grid container pt={2} spacing={2}>
+      <Grid container pt={2} spacing={isSmall ? 0 : 2}>
         {data.map((item, index) => {
-          return <Grid item xs={6} key={index}>
-            <Card sx={{ minWidth: 275, minHeight: '100%' }}>
+          return <Grid item xs={12} sm={6} key={index} sx={{mb: {xs: 2, sm: 0}}}>
+            <Card sx={{minHeight: '100%' }}>
               <CardContent>
                 <Typography variant="h5" component="div">
                   {item.title}

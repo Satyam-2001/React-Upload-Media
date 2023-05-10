@@ -105,25 +105,25 @@ export const Usage = () => {
             }
           </Box>
           <Grid container sx={{ bgcolor: 'background.default', width: '100%' }} py={2} m={0} spacing={2}>
-            <Grid item xs={4} display='flex' justifyContent={'center'}>
+            <Grid item xs={12} sm={4} display='flex' justifyContent={'center'}>
               <Box>
                 <Typography>Primary Color</Typography>
                 <MuiColorInput value={primaryColor} onChange={setPrimaryColor} />
               </Box>
             </Grid>
-            <Grid item xs={4} display='flex' justifyContent={'center'}>
+            <Grid item xs={12} sm={4} display='flex' justifyContent={'center'}>
               <Box>
                 <Typography>Secondary Color</Typography>
                 <MuiColorInput value={secondaryColor} onChange={setSecondaryColor} />
               </Box>
             </Grid>
-            <Grid item xs={4} display='flex' justifyContent={'center'}>
+            <Grid item xs={12} sm={4} display='flex' justifyContent={'center'}>
               <Box>
                 <Typography>Button Color</Typography>
                 <MuiColorInput value={buttonColor} onChange={setButtonColor} />
               </Box>
             </Grid>
-            <Grid item xs={4} display='flex' justifyContent={'space-around'} alignItems='center'>
+            <Grid item xs={12} sm={4} display='flex' justifyContent={'space-around'} alignItems='center'>
               <Typography>Multiple</Typography>
               <ToggleButtonGroup
                 color="primary"
@@ -136,13 +136,14 @@ export const Usage = () => {
                 <ToggleButton value="True">True</ToggleButton>
               </ToggleButtonGroup>
             </Grid>
-            <Grid item xs={8} display='flex' justifyContent={'space-around'} alignItems='center'>
+            <Grid item xs={8} sx={{display: {xs: 'none', sm: 'flex',}}} justifyContent={'space-around'} alignItems='center' direction={'row'} flexGrow={1}>
               <Typography>File Type</Typography>
               <ToggleButtonGroup
                 color="primary"
                 value={fileType}
                 onChange={handleFiltTypeChange}
                 aria-label="Platform"
+
               >
                 <ToggleButton value="image">Image</ToggleButton>
                 <ToggleButton value="video">Video</ToggleButton>
@@ -151,10 +152,10 @@ export const Usage = () => {
                 <ToggleButton value="Any">Any</ToggleButton>
               </ToggleButtonGroup>
             </Grid>
-            <Grid item xs={12} m={3}>
+            <Grid xs={12} m={3} sx={{padding: 0}}>
               <CodeBlock height={'400px'}>
                 {component === 'Upload Media' ?
-`import React, { useState } from 'react'
+                  `import React, { useState } from 'react'
 import { UploadMedia } from 'react-upload-media';
 
 export const App = (props) => {
@@ -180,8 +181,8 @@ export const App = (props) => {
           />
       </div>
   );
-} ` : 
-`import React, { useState } from 'react'
+} ` :
+                  `import React, { useState } from 'react'
 import { UploadMediaModal } from 'react-upload-media';
 
 export const App = (props) => {

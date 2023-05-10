@@ -137,8 +137,8 @@ export const GettingStarted = () => {
             <Typography component='p'>React Upload Media is a library of React UI which provides component for uploading media.</Typography>
             <Typography component='p'>It consists of namely two components.</Typography>
             <ul>
-                <li><Link href='#UploadMedia'>Upload Media</Link></li>
-                <li><Link href='#UploadMediaModal'>Upload Media Modal</Link></li>
+                <li>Upload Media</li>
+                <li>Upload Media Modal</li>
             </ul>
             <Divider />
             <Introduction />

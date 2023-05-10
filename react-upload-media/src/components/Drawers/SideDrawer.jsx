@@ -14,7 +14,8 @@ import CreateIcon from '@mui/icons-material/Create';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Typography } from '@mui/material';
+import { IconButton, Typography } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const drawerWidth = 240;
 
@@ -53,23 +54,15 @@ const Item = (props) => {
 
 export const SideDrawer = (props) => {
 
-    return (
-        <Drawer
-            sx={{
-                width: drawerWidth,
-                flexShrink: 0,
-                '& .MuiDrawer-paper': {
-                    width: drawerWidth,
-                    boxSizing: 'border-box',
-                },
-            }}
-            variant="permanent"
-            anchor="left"
-        >
-            <Toolbar>
-                <img src={require('../../images/icon.png')} height='40px'/>
-                <Typography component={'h1'} sx ={{fontWeight: '700', textTransform: 'uppercase', color: 'primary.main', fontSize: 'large', marginLeft: '0.4rem'}}>Upload Media</Typography>
-            </ Toolbar>
+    const { handleDrawerToggle, mobileOpen } = props;
+    const container = window !== undefined ? () => window.document.body : undefined;
+
+
+    const drawer = (
+        <><Toolbar>
+            <img src={require('../../images/icon.png')} height='40px' />
+            <Typography component={'h1'} sx={{ fontWeight: '700', textTransform: 'uppercase', color: 'primary.main', fontSize: 'large', marginLeft: '0.4rem' }}>Upload Media</Typography>
+        </ Toolbar>
             <Divider />
             <List>
                 <Item icon={<ArticleIcon />} text={'Overview'} />
@@ -77,6 +70,42 @@ export const SideDrawer = (props) => {
                 <Item icon={<CreateIcon />} text={'Usage'} />
                 <Item icon={<ExploreIcon />} text={'Explore'} />
             </List>
-        </Drawer>
+        </>)
+
+    return (
+        <>
+            <Drawer
+                container={container}
+                variant="temporary"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                ModalProps={{
+                    keepMounted: true, // Better open performance on mobile.
+                    style: {opacity: 1}
+                }}
+                // BackdropProps={{style:{backgroundColor:"white", opacity:2}}}
+                sx={{
+                    display: { xs: 'block', md: 'none' },
+                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                }}
+            >
+                {drawer}
+            </Drawer>
+            <Drawer
+                sx={{
+                    display: { xs: 'none', md: 'block' },
+                    width: drawerWidth,
+                    flexShrink: 0,
+                    '& .MuiDrawer-paper': {
+                        width: drawerWidth,
+                        boxSizing: 'border-box',
+                    },
+                }}
+                variant="permanent"
+                anchor="left"
+            >
+                {drawer}
+            </Drawer>
+        </>
     )
 }
