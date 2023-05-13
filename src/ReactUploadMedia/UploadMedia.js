@@ -18,7 +18,7 @@ export const UploadMedia = (props) => {
     const isFileExist = Boolean(files.length > 0);
 
     return (
-        <ColorContext.Provider value={{primaryColor: primaryColor || '#0073e6', secondaryColor: secondaryColor || '#fff', buttonColor: buttonColor || '#0073e6'}}>
+        <ColorContext.Provider value={{primaryColor: primaryColor || '#fff', secondaryColor: secondaryColor || 'rgb(0, 115, 230)', buttonColor: buttonColor || 'rgb(37, 156, 242)'}}>
             <Stack direction='column' width={'100%'} height={props.height ? props.height : '100%'} bgcolor={primaryColor || '#0073e6'} >
                 {
                     !isFileExist && (

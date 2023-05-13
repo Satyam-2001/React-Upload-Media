@@ -1,6 +1,7 @@
 {
+  "homepage": "https://Satyam-2001.github.io/React-Upload-Media",
   "name": "react-upload-media",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

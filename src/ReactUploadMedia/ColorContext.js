@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default React.createContext({
-    primaryColor: '#0073e6',
-    secondaryColor: '#fff',
-    buttonColor: '#0073e6'
+    primaryColor: '#fff',
+    secondaryColor: 'rgb(0, 115, 230)',
+    buttonColor: 'rgb(37, 156, 242)'
 })

@@ -34,7 +34,8 @@ export const FileStack = (props) => {
         if (file.name === selectedFile?.name) {
             const index = props.files.findIndex(file => file.name === selectedFile.name);
             const nextItem = (index + 1) % (props.files.length);
-            setSelectedFile(props?.files?.[nextItem])
+            const new_file = props?.files?.[nextItem];
+            setSelectedFile(new_file)
         }
         props.removeFile(file)
     }

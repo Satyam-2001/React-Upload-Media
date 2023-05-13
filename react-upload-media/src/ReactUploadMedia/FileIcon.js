@@ -13,24 +13,27 @@ const iconStyle = {
 
 export const FileIcon = (props) => {
 
-    const {primaryColor, secondaryColor} = useContext(ColorContext)
+    const { primaryColor, secondaryColor } = useContext(ColorContext)
     const [hover, setHover] = useState(false)
+    let isActive = true;
 
     return (
-        <Box
+        <div
             style={{ position: 'relative', overflow: 'hidden' }}
-            sx={{
-                border: props.selected ? '2px solid' : '1px solid rgba(100, 100, 100, 0.4)',
-                borderColor: props.selected ? secondaryColor : 'grey',
-                borderRadius: '5px',
-                height: '56px',
-                width: '56px',
-            }}
             onMouseOver={() => setHover(true)}
-            onMouseOut={() => setHover(false)}
-            onClick={props.onClick}
-        >
-            <CreateIcon file={props.file} style={iconStyle} />
+            onMouseOut={() => setHover(false)}>
+            <Box
+                sx={{
+                    border: props.selected ? '2px solid' : '1px solid rgba(100, 100, 100, 0.4)',
+                    borderColor: props.selected ? secondaryColor : 'grey',
+                    borderRadius: '5px',
+                    height: '56px',
+                    width: '56px',
+                }}
+                onClick={props.onClick}
+            >
+                <CreateIcon file={props.file} style={iconStyle} />
+            </Box >
             {
                 hover && (
                     <div style={{ position: 'absolute', zIndex: '9000', top: 0, right: 0, cursor: 'pointer' }}>
@@ -39,12 +42,14 @@ export const FileIcon = (props) => {
                             fontSize={'5px'}
                             margin={'4px'}
                             pading={'4px'}
-                            onClick={() => props.onDelete(props.file)}
+                            onClick={() => {
+                                props.onDelete(props.file)
+                            }}
                         />
                     </div>
                 )
             }
-        </Box >
+        </div>
 
     )
 }

@@ -6,8 +6,8 @@ This library contains two react component `UploadMedia` and `UploadMediaModal`
 
 <a href="https://satyam-2001.github.io/React-Upload-Media/" target="_blank">
 <div align="center">
-<p align="center" style="color:red;text-decoration:none; font-weight:500; letter-spacing:2px; font-size:large;" >⬆️Check Out Our Website</p>
-<img width="641" alt="react_arts" src="https://github.com/Satyam-2001/React-Arts/assets/88069082/93ccd3cb-1a57-47c8-aad9-973a8c74c3ba">
+<h2 align="center" style="color:red;text-decoration:none; font-weight:500; letter-spacing:2px; font-size:large;" >⬆️Get Started</h2>
+<img width="641" alt="react_arts" src="https://github.com/Satyam-2001/React-Upload-Media/assets/88069082/0b17aab3-e8f3-470b-9f08-565a28c209ad">
 </div>
 </a>
 
@@ -57,8 +57,8 @@ export default App;
 
 | Name           | Type           | Required | Default | Description                                 |
 | -------------- | -------------- | -------- | ------- | ------------------------------------------- |
-| primaryColor   | String         | false    | #0073e6 | primary color of the component
-| secondaryColor | String         | false    | #fff    | secondary color of the component
+| primaryColor   | String         | false    | #fff    | primary color of the component
+| secondaryColor | String         | false    | #99FF33 | secondary color of the component
 | buttonColor    | String         | false    | #0073e6 | button Color of the component
 | options        | Object         | false    | -       | Options for file input
 | onSubmit       | Function       | false    | -       | Returs uploaded files
@@ -111,8 +111,8 @@ export const App = (props) => {
 | -------------- | -------------- | -------- | ------- | ------------------------------------------- |
 | open           | Boolean        | true     | false   | to open the modal
 | onClose        | Function       | true     | -       | function to close the modal 
-| primaryColor   | String         | false    | #0073e6 | primary color of the component
-| secondaryColor | String         | false    | #fff    | secondary color of the component
+| primaryColor   | String         | false    | #fff    | primary color of the component
+| secondaryColor | String         | false    | #99FF33 | secondary color of the component
 | buttonColor    | String         | false    | #0073e6 | button Color of the component
 | options        | Object         | false    | -       | Options for file input
 | onSubmit       | Function       | false    | -       | Returs uploaded files

@@ -97,8 +97,8 @@ export const GettingStarted = () => {
     const [files, setFiles] = useState([])
     const options = {
         multiple: true,
-        // accept: "image/*",
-    };
+        accept: '/*'
+      }
 
     const handleClose = () => {
         setOpen(false)
@@ -204,7 +204,7 @@ export const GettingStarted = () => {
                     </Button>
                 </Box>
             </Paper>
-            <UploadMediaModal options={{ ...options }} open={open} onClose={handleClose} onSubmit={submitHandler} primaryColor={theme.palette.background.default} secondaryColor={theme.palette.secondary.dark} />
+            <UploadMediaModal options={options} open={open} onClose={handleClose} onSubmit={submitHandler} primaryColor={theme.palette.background.default} secondaryColor={theme.palette.secondary.dark} />
             <CodeBlock>{code}</CodeBlock>
         </ >
     )
